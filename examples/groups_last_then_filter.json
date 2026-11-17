@@ -1,0 +1,12 @@
+{
+  "comment": "对每个 g：先取 last() 的 item，再筛 code=x。期望 C、D（id 10、14；第三组末项 F 是 code=y 被筛掉）。与 filter-then-last 对比展示谓词顺序语义。",
+  "paths": [
+    {"steps": [
+      {"axis": "child", "test": {"kind": "name", "qname": "r"}},
+      {"axis": "child", "test": {"kind": "name", "qname": "g"}},
+      {"axis": "child", "test": {"kind": "name", "qname": "item"},
+       "predicates": [{"kind": "pos", "last": true},
+                      {"kind": "attr", "qname": "code", "value": "x"}]}
+    ]}
+  ]
+}

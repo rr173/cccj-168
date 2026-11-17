@@ -1,0 +1,11 @@
+{
+  "comment": "以 C（groups.xml 中 id=10 的 item 元素）为上下文：反向轴 preceding-sibling 上先筛 code=x 再取 [1]，应得 A（id 4）。上下文 id 依 samples/groups.xml 的导入而定。",
+  "context": {"id": 10},
+  "paths": [
+    {"steps": [
+      {"axis": "preceding-sibling", "test": {"kind": "name", "qname": "item"},
+       "predicates": [{"kind": "attr", "qname": "code", "value": "x"},
+                      {"kind": "pos", "n": 1}]}
+    ]}
+  ]
+}

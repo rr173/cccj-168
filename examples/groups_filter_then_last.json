@@ -1,0 +1,12 @@
+{
+  "comment": "对每个 g：先筛 code=x 的 item，再取 last()。期望 C、D、E（id 10、14、18）。用法：python3 -m xmlnodelib query --db groups.nldb --ast examples/groups_filter_then_last.json --out out.jsonl",
+  "paths": [
+    {"steps": [
+      {"axis": "child", "test": {"kind": "name", "qname": "r"}},
+      {"axis": "child", "test": {"kind": "name", "qname": "g"}},
+      {"axis": "child", "test": {"kind": "name", "qname": "item"},
+       "predicates": [{"kind": "attr", "qname": "code", "value": "x"},
+                      {"kind": "pos", "last": true}]}
+    ]}
+  ]
+}
