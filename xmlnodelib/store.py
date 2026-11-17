@@ -49,6 +49,10 @@ CREATE TABLE node_values(
   chunk TEXT NOT NULL,
   PRIMARY KEY(node_id, seq)
 ) WITHOUT ROWID;
+CREATE TABLE last_desc_pending(
+  id INTEGER PRIMARY KEY,
+  last_desc INTEGER NOT NULL
+) WITHOUT ROWID;
 CREATE TABLE meta(
   key TEXT PRIMARY KEY,
   value TEXT

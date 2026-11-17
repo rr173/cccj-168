@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- invalid for reconciliation: product name appears twice (a normal
+     comparison field matched two nodes); must fail rather than pick one -->
+<c:catalog xmlns:c="urn:catalog" xmlns:u="urn:units">
+  <c:product c:sku="P1">
+    <c:name>Alpha</c:name>
+    <c:name>Alpha again</c:name>
+  </c:product>
+</c:catalog>

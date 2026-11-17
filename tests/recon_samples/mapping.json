@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "namespaces": {"c": "urn:catalog", "u": "urn:units"},
+  "product": {
+    "select": [
+      {"axis": "child", "test": {"kind": "name", "qname": "c:catalog"}},
+      {"axis": "child", "test": {"kind": "name", "qname": "c:product"}}
+    ],
+    "sku": {
+      "name": "product.sku",
+      "path": [{"axis": "attribute", "test": {"kind": "name", "qname": "c:sku"}}]
+    },
+    "fields": [
+      {
+        "name": "product/name",
+        "path": [{"axis": "child", "test": {"kind": "name", "qname": "c:name"}}]
+      },
+      {
+        "name": "product/price",
+        "path": [{"axis": "child", "test": {"kind": "name", "qname": "c:price"}}]
+      },
+      {
+        "name": "product/note",
+        "path": [{"axis": "child", "test": {"kind": "name", "qname": "c:note"}}]
+      },
+      {
+        "name": "product/uom",
+        "path": [
+          {"axis": "child", "test": {"kind": "name", "qname": "u:uom"}}
+        ]
+      }
+    ],
+    "variants": {
+      "path": [{"axis": "child", "test": {"kind": "name", "qname": "c:variant"}}],
+      "code": {
+        "name": "variant.code",
+        "path": [{"axis": "attribute", "test": {"kind": "name", "qname": "c:variantCode"}}]
+      },
+      "fields": [
+        {
+          "name": "variant/label",
+          "path": [{"axis": "child", "test": {"kind": "name", "qname": "c:label"}}]
+        },
+        {
+          "name": "variant/stock",
+          "path": [{"axis": "child", "test": {"kind": "name", "qname": "c:stock"}}]
+        }
+      ]
+    }
+  }
+}

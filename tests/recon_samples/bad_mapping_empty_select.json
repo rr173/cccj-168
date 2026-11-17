@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "namespaces": {"c": "urn:catalog"},
+  "product": {
+    "select": [],
+    "sku": {"name": "product.sku",
+            "path": [{"axis": "attribute",
+                      "test": {"kind": "name", "qname": "c:sku"}}]},
+    "fields": []
+  }
+}

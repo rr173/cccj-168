@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- same logical catalog as old.xml with DIFFERENT namespace prefixes:
+     cat->c, unit->u. Expanded-name matching must produce zero events. -->
+<cat:catalog xmlns:cat="urn:catalog" xmlns:unit="urn:units">
+  <cat:product cat:sku="P1">
+    <cat:name>Alpha</cat:name>
+    <cat:price>10.00</cat:price>
+    <cat:note>stable note</cat:note>
+    <unit:uom>each</unit:uom>
+    <cat:variant cat:variantCode="1"><cat:label>red</cat:label><cat:stock>5</cat:stock></cat:variant>
+    <cat:variant cat:variantCode="2"><cat:label>blue</cat:label><cat:stock>0</cat:stock></cat:variant>
+  </cat:product>
+  <cat:product cat:sku="P2">
+    <cat:name>Beta</cat:name>
+    <cat:price>22.50</cat:price>
+    <cat:note></cat:note>
+    <unit:uom>box</unit:uom>
+    <cat:variant cat:variantCode="1"><cat:label>small</cat:label><cat:stock>9</cat:stock></cat:variant>
+  </cat:product>
+  <cat:product cat:sku="P3">
+    <cat:name>Gamma</cat:name>
+    <cat:price>7.00</cat:price>
+    <unit:uom>kg</unit:uom>
+    <cat:variant cat:variantCode="1"><cat:label>one-litre</cat:label><cat:stock>3</cat:stock></cat:variant>
+  </cat:product>
+  <cat:product cat:sku="P4">
+    <cat:name>Delta</cat:name>
+    <cat:price>99.00</cat:price>
+    <unit:uom>set</unit:uom>
+  </cat:product>
+  <cat:product cat:sku="P5">
+    <cat:name>Epsilon</cat:name>
+    <cat:price>3.10</cat:price>
+    <unit:uom>each</unit:uom>
+    <cat:variant cat:variantCode="7"><cat:label>pack</cat:label><cat:stock>4</cat:stock></cat:variant>
+  </cat:product>
+</cat:catalog>

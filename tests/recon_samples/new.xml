@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<c:catalog xmlns:c="urn:catalog" xmlns:u="urn:units">
+  <!-- today's catalog: P5 removed, P6 added; P1..P4 changed as documented -->
+  <c:product c:sku="P1">
+    <c:name>Alpha renamed</c:name>
+    <c:price>10.00</c:price>
+    <c:note>stable note</c:note>
+    <u:uom>each</u:uom>
+    <!-- variants reordered (2 before 1): must produce no event by itself -->
+    <c:variant c:variantCode="2"><c:label>blue</c:label><c:stock>0</c:stock></c:variant>
+    <c:variant c:variantCode="1"><c:label>red</c:label><c:stock>6</c:stock></c:variant>
+  </c:product>
+  <c:product c:sku="P2">
+    <c:name>Beta</c:name>
+    <c:price>19.90</c:price>
+    <u:uom>box</u:uom>
+    <!-- note element removed: empty -> missing is a real field change -->
+    <c:variant c:variantCode="1"><c:label>small</c:label><c:stock>9</c:stock></c:variant>
+  </c:product>
+  <c:product c:sku="P3">
+    <c:name>Gamma</c:name>
+    <c:price>7.00</c:price>
+    <u:uom>kg</u:uom>
+    <c:variant c:variantCode="1"><c:label>one-litre</c:label><c:stock>3</c:stock></c:variant>
+    <c:variant c:variantCode="2"><c:label>two-litre</c:label><c:stock>1</c:stock></c:variant>
+  </c:product>
+  <c:product c:sku="P4">
+    <c:name>Delta</c:name>
+    <c:price>99.00</c:price>
+    <u:uom>set</u:uom>
+  </c:product>
+  <c:product c:sku="P6">
+    <c:name>Zeta</c:name>
+    <c:price>55.00</c:price>
+    <u:uom>pallet</u:uom>
+    <c:variant c:variantCode="1"><c:label>bulk</c:label><c:stock>20</c:stock></c:variant>
+  </c:product>
+</c:catalog>

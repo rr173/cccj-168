@@ -1,0 +1,4 @@
+<c:catalog xmlns:c="urn:catalog" xmlns:u="urn:units">
+  <c:product c:sku="A"><c:group><c:name>deep changed</c:name></c:group>
+    <c:variant c:variantCode="1"><c:label><c:lang>L2</c:lang></c:label></c:variant></c:product>
+</c:catalog>

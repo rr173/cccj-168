@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- invalid for reconciliation: SKU is present but empty -->
+<c:catalog xmlns:c="urn:catalog" xmlns:u="urn:units">
+  <c:product c:sku=""><c:name>Empty SKU</c:name></c:product>
+</c:catalog>

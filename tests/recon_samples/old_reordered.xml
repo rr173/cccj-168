@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- same logical catalog as old.xml: attribute order and element formatting
+     differ, which must not produce any reconciliation event -->
+<c:catalog xmlns:u="urn:units" xmlns:c="urn:catalog"
+  ><c:product c:sku='P1'
+    ><c:price>10.00</c:price
+    ><u:uom>each</u:uom
+    ><c:note>stable note</c:note
+    ><c:name>Alpha</c:name
+    ><c:variant c:variantCode="2"
+      ><c:stock>0</c:stock><c:label>blue</c:label
+    ></c:variant
+    ><c:variant c:variantCode="1"
+      ><c:stock>5</c:stock><c:label>red</c:label
+    ></c:variant
+  ></c:product
+  ><c:product c:sku="P2"
+    ><u:uom>box</u:uom
+    ><c:note></c:note
+    ><c:price>22.50</c:price
+    ><c:name>Beta</c:name
+    ><c:variant c:variantCode="1"
+      ><c:label>small</c:label><c:stock>9</c:stock
+    ></c:variant
+  ></c:product
+  ><c:product c:sku="P3"
+    ><c:price>7.00</c:price
+    ><c:name>Gamma</c:name
+    ><u:uom>kg</u:uom
+    ><c:variant c:variantCode="1"
+      ><c:label>one-litre</c:label><c:stock>3</c:stock
+    ></c:variant
+  ></c:product
+  ><c:product c:sku="P4"
+    ><c:name>Delta</c:name
+    ><c:price>99.00</c:price
+    ><u:uom>set</u:uom
+  ></c:product
+  ><c:product c:sku="P5"
+    ><c:price>3.10</c:price
+    ><c:name>Epsilon</c:name
+    ><u:uom>each</u:uom
+    ><c:variant c:variantCode="7"
+      ><c:label>pack</c:label><c:stock>4</c:stock
+    ></c:variant
+  ></c:product
+></c:catalog>

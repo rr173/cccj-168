@@ -27,3 +27,10 @@ class QueryError(XnlError):
 
 class ResourceLimit(XnlError):
     """A configured resource limit (e.g. max depth) was exceeded."""
+
+
+class ReconError(XnlError):
+    """A snapshot reconciliation cannot be published: bad mapping, an
+    incomplete input library, a missing/duplicate/empty entity key, a
+    multi-value mapping field, an existing result path, or a result library
+    that is not complete."""

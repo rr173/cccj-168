@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- invalid for reconciliation: SKU P1 appears twice; the run must fail and
+     no new result library may be left behind -->
+<c:catalog xmlns:c="urn:catalog" xmlns:u="urn:units">
+  <c:product c:sku="P1"><c:name>Alpha</c:name></c:product>
+  <c:product c:sku="P2"><c:name>Beta</c:name></c:product>
+  <c:product c:sku="P1"><c:name>Alpha duplicate</c:name></c:product>
+</c:catalog>

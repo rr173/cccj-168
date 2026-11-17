@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "namespaces": {"c": "urn:catalog"},
+  "product": {
+    "select": [{"axis": "child", "test": {"kind": "name", "qname": "c:catalog"}},
+               {"axis": "child", "test": {"kind": "name", "qname": "c:product"}}],
+    "sku": {"name": "sku", "path": [{"axis": "attribute", "test": {"kind": "name", "qname": "c:sku"}}]},
+    "fields": [
+      {"name": "deep/name", "path": [
+        {"axis": "child", "test": {"kind": "name", "qname": "c:group"}},
+        {"axis": "child", "test": {"kind": "name", "qname": "c:name"}}]},
+      {"name": "any-name", "path": [
+        {"axis": "descendant", "test": {"kind": "name", "qname": "c:name"}}]}
+    ],
+    "variants": {
+      "path": [{"axis": "child", "test": {"kind": "name", "qname": "c:variant"}}],
+      "code": {"name": "code", "path": [{"axis": "attribute", "test": {"kind": "name", "qname": "c:variantCode"}}]},
+      "fields": [
+        {"name": "nested/lang", "path": [
+          {"axis": "child", "test": {"kind": "name", "qname": "c:label"}},
+          {"axis": "child", "test": {"kind": "name", "qname": "c:lang"}}]}
+      ]
+    }
+  }
+}

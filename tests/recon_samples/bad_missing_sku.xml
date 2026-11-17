@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- invalid for reconciliation: the middle product has no SKU attribute;
+     a missing key must fail the whole run, not skip the entity -->
+<c:catalog xmlns:c="urn:catalog" xmlns:u="urn:units">
+  <c:product c:sku="P1"><c:name>Alpha</c:name></c:product>
+  <c:product><c:name>No SKU here</c:name></c:product>
+  <c:product c:sku="P3"><c:name>Gamma</c:name></c:product>
+</c:catalog>

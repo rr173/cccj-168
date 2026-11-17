@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- invalid for reconciliation: variantCode "1" is duplicated under P2 -->
+<c:catalog xmlns:c="urn:catalog" xmlns:u="urn:units">
+  <c:product c:sku="P1"><c:name>Alpha</c:name></c:product>
+  <c:product c:sku="P2">
+    <c:name>Beta</c:name>
+    <c:variant c:variantCode="1"><c:label>small</c:label></c:variant>
+    <c:variant c:variantCode="1"><c:label>small again</c:label></c:variant>
+  </c:product>
+</c:catalog>

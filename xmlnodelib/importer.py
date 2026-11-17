@@ -84,9 +84,19 @@ class _Importer:
             self.values_pending.clear()
 
     def _flush_updates(self):
+        # An open element can receive several last_desc updates when flush
+        # boundaries fall while its subtree is still open.  Every queued
+        # value is a subtree end seen so far and ids only grow, so the true
+        # end is the largest value ever recorded for the id; the guarded
+        # upsert keeps MAX(pending, stored) regardless of statement order or
+        # which batch each update landed in.  The document node is finalized
+        # separately after parsing, once every element has closed.
         if self.updates_pending:
             self.conn.executemany(
-                "UPDATE nodes SET last_desc = ? WHERE id = ?", self.updates_pending)
+                "INSERT INTO last_desc_pending(id, last_desc) VALUES (?,?)"
+                " ON CONFLICT(id) DO UPDATE SET"
+                " last_desc = MAX(last_desc_pending.last_desc, excluded.last_desc)",
+                ((eid, last_id) for last_id, eid in self.updates_pending))
             self.updates_pending.clear()
 
     def flush_all(self):
@@ -243,6 +253,14 @@ def import_xml(xml_path, db_path, *, max_depth=256, input_chunk=65536,
         imp.close_text()
         imp.updates_pending.append((imp.next_id, imp.document_id))
         imp.flush_all()
+
+        # Fold the guarded pending values into nodes (each pending id is a
+        # document/element node) and drop the staging table before publishing.
+        conn.execute(
+            "UPDATE nodes SET last_desc = ("
+            " SELECT p.last_desc FROM last_desc_pending p WHERE p.id = nodes.id)"
+            " WHERE id IN (SELECT id FROM last_desc_pending)")
+        conn.execute("DROP TABLE last_desc_pending")
 
         meta_rows = [
             ("schema_version", store.SCHEMA_VERSION),

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- one-sided field presence, reversed relative to onesided_old.xml:
+     A loses price and variant stock, B gains them -->
+<c:catalog xmlns:c="urn:catalog">
+  <c:product c:sku="A">
+    <c:name>same</c:name>
+    <c:variant c:variantCode="1"><c:label>L</c:label></c:variant>
+  </c:product>
+  <c:product c:sku="B">
+    <c:name>same</c:name>
+    <c:price>9</c:price>
+    <c:variant c:variantCode="1"><c:label>L</c:label><c:stock>3</c:stock></c:variant>
+  </c:product>
+</c:catalog>

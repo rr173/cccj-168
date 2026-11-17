@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- one-sided field presence: A has price + a variant with stock, B does not -->
+<c:catalog xmlns:c="urn:catalog">
+  <c:product c:sku="A">
+    <c:name>same</c:name>
+    <c:price>9</c:price>
+    <c:variant c:variantCode="1"><c:label>L</c:label><c:stock>3</c:stock></c:variant>
+  </c:product>
+  <c:product c:sku="B"><c:name>same</c:name></c:product>
+</c:catalog>
